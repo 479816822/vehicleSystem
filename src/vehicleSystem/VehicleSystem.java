@@ -69,7 +69,16 @@ public class VehicleSystem {
 
 	}
 
+	public int getCarNum() {
+		return carNum;
+	}
+
+	public void setCarNum(int carNum) {
+		this.carNum += carNum;
+	}
+
 	public void QueryCar() {
+		System.out.println(this.carNum);
 		for (int i = 0; i < carNum; i++) {
 			Car[i].showNew(Car[i]);
 
@@ -109,7 +118,7 @@ public class VehicleSystem {
 
 	public boolean backVehicle(String carID) {
 		boolean T = false;
-		for (int i = 0; i < Car.length; i++) {
+		for (int i = 0; i < carNum; i++) {
 			if (carID.equals(Car[i].getCarNum())) {
 				T = true;
 				Car[i].setAction("ÔÚ¿â");
@@ -117,7 +126,7 @@ public class VehicleSystem {
 			}
 
 		}
-		for (int i = 0; i < coach.length; i++) {
+		for (int i = 0; i < coachNum; i++) {
 			if (carID.equals(coach[i].getCarNum())) {
 				T = true;
 				coach[i].setAction("ÔÚ¿â");
@@ -138,8 +147,9 @@ public class VehicleSystem {
 	}
 
 	public void setCoach(Coach coach) {
-		this.coach[coachNum] = coach;
+		this.coach[coachNum] = coach;                      
 		coachNum++;
+		System.out.println(coachNum);
 	}
 
 	public car[] getCar(String name) {
@@ -154,6 +164,7 @@ public class VehicleSystem {
 	public void setCar(car Car) {
 		this.Car[carNum] = Car;
 		carNum++;
+		System.out.println(carNum);
 	}
 
 }

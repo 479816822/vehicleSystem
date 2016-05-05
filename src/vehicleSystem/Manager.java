@@ -17,9 +17,7 @@ public class Manager {
 	Scanner input = new Scanner(System.in);
 
 	// 管理员的功能
-	public void manage() {
-		// 把管理员的信息传递给系统，以便以后检验管理员
-		VehicleSystem manager = new VehicleSystem(manageName, manageID);
+	public void manage(VehicleSystem manager) {
 		// 验证管理员的信息
 		System.out.print("输入管理员的姓名:");
 		String name = input.next();
@@ -49,6 +47,7 @@ public class Manager {
 				String action = input.next();
 				car Car = new car(kinds, carNum, color, dayFee, action, models);
 				manager.setCar(Car);
+				manager.setCarNum(1);
 				break;
 			// 增加一辆客车
 			case 2:

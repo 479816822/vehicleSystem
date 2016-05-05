@@ -4,10 +4,7 @@ import java.util.Scanner;
 
 public class USer {
 
-	// 创建一个租车系统的对象rent
-	VehicleSystem rent = new VehicleSystem();
-
-	public void use() {
+	public void use(VehicleSystem rent) {
 		Scanner input = new Scanner(System.in);
 		boolean T = false;
 		while (true) {
